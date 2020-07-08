@@ -1,0 +1,111 @@
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>IPLscorePredictor</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+		<script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+	</head>
+
+
+<!-- <html>  -->
+<body> 
+	<h3 style="color:lightgray;font-size:40px; font-family:Garamond;">IPL Score Predictor</h3> 
+	<!-- <br> -->
+	<!-- <h4 style="color:black;font-size:20px; font-style: italic;">A Machine Learning Web App, Built with Flask, Deployed using Heroku</h4> -->
+            <div class='description'>
+    			<p style="color:lightgray;font-size:20px; font-style: italic; font-family:Garamond;" >A Machine Learning Web App built with Flask used to predict final score</p>
+    			<br>
+    		</div>
+    	</div>
+
+<div>
+<form action="/result" method="POST"> 
+    <label style="color:lightgray;font-size:20px; font-family: Garamond;" for="bat_team">Select Batting Team</label> 
+    <select id="bat_team" name="bat_team"> 
+    <option value="">Select a team</option> 
+    <option value="0">Chennai Super Kings</option> 
+    <option value="1">Delhi Daredevils</option> 
+    <option value="2">Kings XI Punjab</option> 
+    <option value="3">Kolkata Knight Riders</option> 
+    <option value="4">Mumbai Indians</option> 
+    <option value="5">Rajasthan Royals</option> 
+    <option value="6">Royal Challengers Bangalore</option> 
+    <option value="7">Sunrisers Hyderabad</option> 
+    </select>
+    <br>
+    <br>
+    <label style="color:lightgray;font-size:20px; font-family: Garamond;" for="bowl_team">Select Bowling Team</label> 
+    <select id="bowl_team" name="bowl_team"> 
+    <option value="">Select a team</option> 
+    <option value="0">Chennai Super Kings</option> 
+    <option value="1">Delhi Daredevils</option> 
+    <option value="2">Kings XI Punjab</option> 
+    <option value="3">Kolkata Knight Riders</option> 
+    <option value="4">Mumbai Indians</option> 
+    <option value="5">Rajasthan Royals</option> 
+    <option value="6">Royal Challengers Bangalore</option> 
+    <option value="7">Sunrisers Hyderabad</option> 
+    </select>
+    <br>
+    <br>
+	<label style="color:lightgray;font-size:18px;" for="runs">Runs</label> 
+	<input type="text" id="runs" name="runs" placeholder="Enter runs scored so far"> 
+	<br> 
+	<br>
+	<label style="color:lightgray;font-size:18px;" for="wickets">Wickets</label> 
+	<input type="text" id="wickets" name="wickets" placeholder="Enter fall of wickets"> 
+	<br>
+	<br>
+    <label style="color:lightgray;font-size:18px;" for="overs">Overs</label> 
+    <input type="text" id="overs" name="overs" placeholder="number of overs bowled"> 
+    <br>
+    <br>
+    <label style="color:lightgray;font-size:18px;" for="runs_last_5">Runs in Last 5 Overs</label> 
+    <input type="text" id="runs_last_5" name="runs_last_5" placeholder="runs scored in last 5 overs"> 
+    <br>
+    <br>
+    <label style="color:lightgray;font-size:18px;" for="wickets_last_5">Wickets in Last 5 Overs</label> 
+    <input type="text" id="wickets_last_5" name="wickets_last_5" placeholder="Wickets lost in last 5 overs"> 
+    <br>
+    <br>
+	
+	<input style="color:black;font-size:15px;" type="submit" value="Predict final score"> 
+</form> 
+</div> 
+<style>
+        body {
+            background-image: url('https://wallpapercave.com/wp/wp4059913.jpg');
+            background-color: rgba(0,0,0,0.7);
+            background-blend-mode: darken;
+            /*background-color:;*/
+            text-align: center;
+            background-size: 100% 100%;
+            /*animation-name: example;
+  			animation-duration: 3s;
+  			animation-iteration-count: infinite;
+  			animation-direction: alternate;
+            padding: px;*/
+        /*}
+        @keyframes example {
+  		from {background-color:#7FCDCD;}
+  		to {background-color: #FF6F61;}
+		}*/
+    </style>
+</body> 
+</html> 
+<!doctype html>
+<html>
+   <body>
+       <h1 style="color:lightgray;font-size:40px; font-family: Garamond;">Final Score according to stats can be {{ prediction }}</h1>
+  <br>
+  <br>
+<div class='footer'>
+           <div class="contact">
+               <a target="_blank" href="https://github.com/Kartik-Mishra99/IPL-Score-Predictor"><i class="fab fa-github fa-lg contact-icon"></i></a>
+               <a target="_blank" href="https://www.linkedin.com/in/kartik-mishra99/"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+           </div>
+           <p style="color:black;font-size:15px;" class='footer-description'>Made with ❤️ by Kartik Mishra</p>
+       </div>
+</body>
+</html>
